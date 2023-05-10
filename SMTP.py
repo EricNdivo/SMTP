@@ -2,16 +2,18 @@ import smtplib, ssl
 import getpass
 import time
 port = 465
-sender_email = (input(str("Enter your Email:\n")))
+print("Simple SMTP server")
+time.sleep(1)
+sender_email = (input(str("Enter your Email Address:\n")))
 print("")
-time.sleep(2)
+time.sleep(1)
 receiver_email = (input(str("Enter Receiver Email:\n")))
 print("")
 context = ssl.create_default_context()
 sender_password = getpass.getpass(prompt="Enter Your Email Password:\n", stream=None)
 message = "file"
 print("")
-time.sleep(2)
+time.sleep(1)
 print("[Attempting to Login...]")
 try:
     with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
