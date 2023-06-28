@@ -22,6 +22,6 @@ try:
     with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
         server.login(sender_email, sender_password)
         server.sendmail(sender_email, receiver_email, message)
-        server.quit()
+        print("Email sent successfully!")
 except smtplib.SMTPAuthenticationError:
     print("Something went wrong, try {https://support.google.com/mail/?p=BadCredentials} to adjust your Google Account.")
